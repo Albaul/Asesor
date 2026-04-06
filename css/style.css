@@ -1,0 +1,245 @@
+/* Variables para personalización rápida */
+:root {
+    --primary-color: #1a365d; /* Azul corporativo, cámbialo según el cliente */
+    --accent-color: #d69e2e; /* Dorado para botones */
+    --bg-color: #f7fafc;
+    --text-main: #2d3748;
+    --text-light: #718096;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* PORTADA */
+.hero {
+    height: 60vh;
+    background: url(/assets/port.jpg)  center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    background: rgba(26, 54, 93, 0.7); /* Capa oscura azulada */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--accent-color);
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: #e2e8f0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* INFO SECTION */
+.info-section {
+    padding: 40px 20px;
+    text-align: center;
+    background: var(--white);
+}
+
+.info-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* GALERÍA / CARRUSELES */
+.gallery-section {
+    padding: 30px 0;
+}
+
+.carousel-wrapper {
+    margin-bottom: 30px;
+}
+
+.carousel-title {
+    padding: 0 20px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Ocultar scrollbar Firefox */
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar Chrome/Safari */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 20px 20px; /* Padding bottom para la sombra */
+}
+
+.property-card {
+    flex: 0 0 80%; /* El 80% permite asomarse a la siguiente tarjeta */
+    scroll-snap-align: center;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.property-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.card-info h4 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* BOTONES */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button:active {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-whatsapp {
+    background-color: #25D366; /* Color oficial WhatsApp */
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.btn-vcf {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+/* CONTACTO */
+.contact-section {
+    background: var(--white);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-section h3 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.branding-doop {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+
+/* REDES SOCIALES (Actualizado para máxima visibilidad) */
+.social-links {
+    margin-top: 25px; /* Un poco más de espacio arriba */
+    display: flex;
+    gap: 15px; /* Espacio entre los botones */
+    justify-content: center;
+}
+
+.social-links a {
+    /* Creamos una base circular sólida */
+    width: 50px;
+    height: 50px;
+    background-color: var(--white); /* Fondo blanco sólido para contraste */
+    color: var(--primary-color); /* El icono toma el color azul oscuro corporativo */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para que resalten */
+    text-decoration: none;
+}
+
+/* Forzamos el tamaño de los SVGs dentro de los botones */
+.social-links a svg {
+    width: 26px; /* Iconos un poco más grandes */
+    height: 26px;
+    fill: currentColor; /* Hereda el color azul oscuro de 'a' */
+}
+
+/* Ajuste específico para iconos que usan 'stroke' (borde) en lugar de 'fill' (relleno) como Instagram */
+.social-links a svg[stroke="currentColor"] {
+    fill: none;
+}
+
+/* EFECTO HOVER/CLIC */
+.social-links a:hover,
+.social-links a:active {
+    background-color: var(--accent-color); /* Cambia a dorado al pasar el dedo/mouse */
+    color: var(--white); /* El icono cambia a blanco */
+    transform: translateY(-3px) scale(1.05); /* Se levanta y agranda ligeramente */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
